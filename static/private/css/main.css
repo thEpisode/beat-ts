@@ -1,0 +1,17 @@
+/* Add your global styles */
+.jumbotron{
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.error-message {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
