@@ -1,5 +1,5 @@
-function route (dependencies) {
-  const gettingStarted = (req, res) => {
+function accountRoute (dependencies: any) {
+  const gettingStarted = (req: any, res: any) => {
     req.route.name = 'account'
     req.route.handler = 'getting-started'
     req.lookup = dependencies.geolocator.getLookup(req)
@@ -28,7 +28,7 @@ function route (dependencies) {
     }
   }
 
-  const profile = (req, res) => {
+  const profile = (req: any, res: any) => {
     req.route.name = 'account'
     req.route.handler = 'profile'
     req.lookup = dependencies.geolocator.getLookup(req)
@@ -56,7 +56,7 @@ function route (dependencies) {
     }
   }
 
-  const overview = (req, res) => {
+  const overview = (req: any, res: any) => {
     req.route.name = 'account'
     req.route.handler = 'overview'
     req.lookup = dependencies.geolocator.getLookup(req)

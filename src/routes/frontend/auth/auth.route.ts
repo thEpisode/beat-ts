@@ -1,9 +1,9 @@
-function auth (dependencies) {
+function auth (dependencies: any) {
   const _utilities = dependencies.utilities
   const _controllers = dependencies.controllers
   const _auth = dependencies.auth
 
-  const login = (req, res) => {
+  const login = (req: any, res: any) => {
     req.route.name = 'auth'
     req.route.handler = 'login'
     req.lookup = dependencies.geolocator.getLookup(req)
@@ -29,7 +29,7 @@ function auth (dependencies) {
     }
   }
 
-  const signup = (req, res) => {
+  const signup = (req: any, res: any) => {
     req.route.name = 'auth'
     req.route.handler = 'signup'
     req.lookup = dependencies.geolocator.getLookup(req)
@@ -57,7 +57,7 @@ function auth (dependencies) {
     }
   }
 
-  const confirmAccount = async (req, res) => {
+  const confirmAccount = async (req: any, res: any) => {
     req.route.name = 'auth'
     req.route.handler = 'confirmAccount'
     req.lookup = dependencies.geolocator.getLookup(req)
@@ -80,7 +80,7 @@ function auth (dependencies) {
     })
   }
 
-  const validateEmail = async (req, res) => {
+  const validateEmail = async (req: any, res: any) => {
     req.route.name = 'auth'
     req.route.handler = 'validateEmail'
     req.lookup = dependencies.geolocator.getLookup(req)

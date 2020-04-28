@@ -1,4 +1,4 @@
-function search (dependencies) {
+function search (dependencies:any) {
   // const _database = dependencies.database
   // const _utilities = dependencies.utilities
 
@@ -7,7 +7,7 @@ function search (dependencies) {
      * @param {*} req
      * @param {*} res
      */
-  const robots = function (req, res) {
+  const robots = function (req:any, res:any) {
     res.type('text/plain')
     res.send(`
 # You know, for robots
@@ -27,7 +27,7 @@ Disallow: */api/*`)
      * @param {*} req
      * @param {*} res
      */
-  const sitemapMaster = function (req, res) {
+  const sitemapMaster = function (req:any, res:any) {
     var xmlContents = '<some-fancy-xml></some-fancy-xml>'
     res.type('text/xml')
     res.send(`<?xml version="1.0" encoding="utf-8"?>
@@ -36,7 +36,7 @@ ${xmlContents}
 </urlset>`)
   }
 
-  const sitemapLatest = function (req, res) {
+  const sitemapLatest = function (req:any, res:any) {
     var xmlContents = '<some-fancy-xml></some-fancy-xml>'
     res.type('text/xml')
     res.send(`<?xml version="1.0" encoding="utf-8"?>

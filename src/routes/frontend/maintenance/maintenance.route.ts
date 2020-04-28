@@ -1,7 +1,8 @@
-function dashboard (dependencies) {
-  const index = (req, res) => {
-    req.route.name = 'dashboard'
-    req.route.handler = 'index'
+function maintenance (dependencies: any) {
+  const _utilities = dependencies.utilities
+
+  const index = (req: any, res: any) => {
+    req.route = { ...req.route, ...{ name: 'maintenance', handler: 'index' } }
     req.lookup = dependencies.geolocator.getLookup(req)
     const locale = dependencies.locale.international(req, res)
     if (!locale) {
@@ -9,8 +10,8 @@ function dashboard (dependencies) {
       return
     }
 
-    res.render('dashboard/index.view.jsx', {
-      title: 'dashboard',
+    _utilities.response.badRequestView(req, res, {
+      title: 'Something was wrong',
       data: {
         locale,
         services: [
@@ -18,7 +19,7 @@ function dashboard (dependencies) {
           '_services/user/s-user.js'
         ]
       },
-      vue: '_views/dashboard/v-index.js'
+      vue: '_views/maintenance/v-index.js'
     })
   }
 
@@ -27,4 +28,4 @@ function dashboard (dependencies) {
   }
 }
 
-module.exports = dashboard
+module.exports = maintenance

@@ -1,4 +1,4 @@
-function login (dependencies) {
+function login (dependencies:any) {
   const _utilities = dependencies.utilities
   const _database = dependencies.database
 
@@ -7,7 +7,7 @@ function login (dependencies) {
      *
      * route to show message (POST http://<<URL>>/api/login/:id)
      */
-  const user = async (req, res) => {
+  const user = async (req:any, res:any) => {
     if (req.body) {
       const result = await _database.entities.login.user(req.body)
 
@@ -17,7 +17,7 @@ function login (dependencies) {
     }
   }
 
-  const logout = async (req, res) => {
+  const logout = async (req:any, res:any) => {
     const result = await _database.entities.login.logout()
 
     res.json(result)

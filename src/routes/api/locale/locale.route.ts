@@ -1,4 +1,4 @@
-function route (dependencies) {
+function localeRoute (dependencies:any) {
   const _utilities = dependencies.utilities
   const _controllers = dependencies.controllers
 
@@ -7,7 +7,7 @@ function route (dependencies) {
      *
      * route to show message (GET http://<<URL>>/api/combo/)
      */
-  const getAllIDDCountries = async (req, res) => {
+  const getAllIDDCountries = async (req:any, res:any) => {
     const params = _utilities.request.getParameters(req)
     const result = await _controllers.locale.getAllIDDCountries(params)
 
@@ -19,14 +19,14 @@ function route (dependencies) {
      *
      * route to show message (GET http://<<URL>>/api/combo/:id)
      */
-  const getLocale = async (req, res) => {
+  const getLocale = async (req:any, res:any) => {
     const params = _utilities.request.getParameters(req)
     const result = await _controllers.locale.getLocale({ args: params, req })
 
     res.json(result)
   }
 
-  const getAllLocales = async (req, res) => {
+  const getAllLocales = async (req:any, res:any) => {
     const params = _utilities.request.getParameters(req)
     const result = await _controllers.locale.getAllLocales({ args: params, req })
 

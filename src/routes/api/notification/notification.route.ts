@@ -1,8 +1,8 @@
-function route (dependencies) {
+function route (dependencies:any) {
   const _utilities = dependencies.utilities
   const _controllers = dependencies.controllers
 
-  const get = async (req, res) => {
+  const get = async (req:any, res:any) => {
     let result = {}
     const params = _utilities.request.getParameters(req)
     const { id, businessId, receiver, q } = params
@@ -29,7 +29,7 @@ function route (dependencies) {
    *
    * route to show message (POST http://<<URL>>/api/notification/create)
    */
-  const create = async (req, res) => {
+  const create = async (req:any, res:any) => {
     const params = _utilities.request.getParameters(req)
     const result = await _controllers.notification.create(params)
 
@@ -41,7 +41,7 @@ function route (dependencies) {
      *
      * route to show message (POST http://<<URL>>/api/notification/update)
      */
-  const update = async (req, res) => {
+  const update = async (req:any, res:any) => {
     const params = _utilities.request.getParameters(req)
     const result = await _controllers.notification.update(params)
 

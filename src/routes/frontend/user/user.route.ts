@@ -1,5 +1,5 @@
-function route (dependencies) {
-  const create = (req, res) => {
+function userRoute (dependencies: any) {
+  const create = (req: any, res: any) => {
     req.route = { ...req.route, ...{ name: 'user', handler: 'create' } }
     req.lookup = dependencies.geolocator.getLookup(req)
     const locale = dependencies.locale.international(req, res)
@@ -33,7 +33,7 @@ function route (dependencies) {
     }
   }
 
-  const list = (req, res) => {
+  const list = (req: any, res: any) => {
     req.route = { ...req.route, ...{ name: 'user', handler: 'list' } }
     req.lookup = dependencies.geolocator.getLookup(req)
     const locale = dependencies.locale.international(req, res)
@@ -66,7 +66,7 @@ function route (dependencies) {
     }
   }
 
-  const edit = (req, res) => {
+  const edit = (req: any, res: any) => {
     req.route = { ...req.route, ...{ name: 'user', handler: 'edit' } }
     req.lookup = dependencies.geolocator.getLookup(req)
     const locale = dependencies.locale.international(req, res)
@@ -100,7 +100,7 @@ function route (dependencies) {
     }
   }
 
-  const block = (req, res) => {
+  const block = (req: any, res: any) => {
     req.route = { ...req.route, ...{ name: 'user', handler: 'block' } }
     req.lookup = dependencies.geolocator.getLookup(req)
     const locale = dependencies.locale.international(req, res)
@@ -133,7 +133,7 @@ function route (dependencies) {
     }
   }
 
-  const uDelete = (req, res) => {
+  const uDelete = (req: any, res: any) => {
     req.route = { ...req.route, ...{ name: 'user', handler: 'delete' } }
     req.lookup = dependencies.geolocator.getLookup(req)
     const locale = dependencies.locale.international(req, res)
@@ -166,7 +166,7 @@ function route (dependencies) {
     }
   }
 
-  const detail = (req, res) => {
+  const detail = (req: any, res: any) => {
     req.route = { ...req.route, ...{ name: 'user', handler: 'create' } }
     req.lookup = dependencies.geolocator.getLookup(req)
     const locale = dependencies.locale.international(req, res)

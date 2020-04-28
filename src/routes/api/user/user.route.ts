@@ -1,8 +1,8 @@
-function route (dependencies) {
+function useRoute (dependencies: any) {
   const _utilities = dependencies.utilities
   const _controllers = dependencies.controllers
 
-  const get = async (req, res) => {
+  const get = async (req: any, res: any) => {
     let result = {}
     const params = _utilities.request.getParameters(req)
     const { id, dni, phone, identity, email, businessId } = params
@@ -31,7 +31,7 @@ function route (dependencies) {
    *
    * route to show message (POST http://<<URL>>/api/user/create)
    */
-  const create = async (req, res) => {
+  const create = async (req: any, res: any) => {
     const params = _utilities.request.getParameters(req)
     const result = await _controllers.user.create(params)
 
@@ -43,7 +43,7 @@ function route (dependencies) {
      *
      * route to show message (POST http://<<URL>>/api/user/update)
      */
-  const update = async (req, res) => {
+  const update = async (req: any, res: any) => {
     const params = _utilities.request.getParameters(req)
     const result = await _controllers.user.update(params)
 

@@ -1,5 +1,5 @@
-function route (dependencies) {
-  const list = (req, res) => {
+function notificationRoute (dependencies: any) {
+  const list = (req: any, res: any) => {
     req.route.name = 'notification'
     req.route.handler = 'list'
     req.lookup = dependencies.geolocator.getLookup(req)
@@ -26,7 +26,7 @@ function route (dependencies) {
     }
   }
 
-  const compose = (req, res) => {
+  const compose = (req: any, res: any) => {
     req.route.name = 'notification'
     req.route.handler = 'create'
     req.lookup = dependencies.geolocator.getLookup(req)

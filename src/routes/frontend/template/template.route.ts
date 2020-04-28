@@ -1,5 +1,5 @@
-function route (dependencies) {
-  const handler = (req, res) => {
+function templateRoute (dependencies: any) {
+  const handler = (req: any, res: any) => {
     req.route.name = 'template'
     req.route.handler = 'handler'
     req.lookup = dependencies.geolocator.getLookup(req)

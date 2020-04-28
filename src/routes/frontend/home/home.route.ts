@@ -1,8 +1,8 @@
-function home (dependencies) {
+function home (dependencies: any) {
   // const _database = dependencies.database
   const _utilities = dependencies.utilities
 
-  const index = (req, res) => {
+  const index = (req: any, res: any) => {
     req.route = { ...req.route, ...{ name: 'home', handler: 'index' } }
     req.lookup = dependencies.geolocator.getLookup(req)
     const locale = dependencies.locale.international(req, res)
@@ -24,7 +24,7 @@ function home (dependencies) {
     })
   }
 
-  const dashboard = (req, res) => {
+  const dashboard = (req: any, res: any) => {
     // FIXME: Example of cookies
     if (!req.cookies.user_session) {
       res.redirect('/login')
