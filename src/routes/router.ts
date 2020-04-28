@@ -48,4 +48,4 @@ const router = {
   ]
 }
 
-module.exports = router
+export { router }
