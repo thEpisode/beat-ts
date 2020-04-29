@@ -21,10 +21,10 @@ class ControllerManager {
       const getDirectories = (source: any) =>
         readdirSync(source).map((name: string) => join(source, name)).filter(isDirectory)
 
-      const directories = getDirectories(`${this._dependencies.root}/controllers/`)
+      const directories = getDirectories(`${this._dependencies.root}/src/controllers/`)
 
       // Map all controllers
-      directories.map((path: string) => {
+      for (const path of directories) {
         try {
           if (path) {
             const name = path.split('\\')[path.split('\\').length - 1]
@@ -37,7 +37,7 @@ class ControllerManager {
           this._console.error(`Error on path ${path}`)
           this._console.error(error)
         }
-      })
+      }
     } catch (error) {
       this._console.error(error)
     }

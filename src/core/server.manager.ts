@@ -157,7 +157,8 @@ class ServerManager {
 
   registerSocket () {
     // Initialize socket when controllers are initialized
-    const socketController = this._settings.dependencies.core.get().controllers.socket
+    const core = this._settings.dependencies.core.get()
+    const socketController = core.controllers.socket
     socketController.initialize()
   }
 

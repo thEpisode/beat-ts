@@ -1,4 +1,4 @@
-{
+const locale = {
   "name": "Español Colombia",
   "code": "es_CO",
   "shortcode": "es",
@@ -121,7 +121,7 @@
         "PAGE_TITLE": "Inicio",
         "MAIN_TITLE_LABEL": "%BEAT%",
         "MAIN_DESCRIPTION_LABEL": "Documentación",
-        "SECOND_DESCRIPTION_LABEL":"Server framework para tus proyectos Node.js, hecho con Express, Firebase y ReactDOM."
+        "SECOND_DESCRIPTION_LABEL": "Server framework para tus proyectos Node.js, hecho con Express, Firebase y ReactDOM."
       }
     },
     "maintenance": {
@@ -250,3 +250,5 @@
     }
   }
 }
+
+export { locale }

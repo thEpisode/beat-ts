@@ -28,7 +28,7 @@ class FrontendManager {
     // build each frontend routes
     this._router.router.frontend.map(async (component: any) => {
       try {
-        const componentView = await require(`./${component.route}`)(this._dependencies)
+        const componentView = await require(`${this._dependencies.root}/src${component.route}`)(this._dependencies)
 
         this._app.get(component.httpRoute, componentView[component.handler])
       } catch (error) {

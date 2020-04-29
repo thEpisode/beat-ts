@@ -22,12 +22,12 @@ class ApiManager {
   }
 
   createAPIEndpoints () {
-    const router = require(`${this._dependencies.root}/routes/router`)
+    const router = require(`${this._dependencies.root}/src/routes/router`)
 
     // build each api routes
     router.router.api.map((component: any) => {
       try {
-        const componentController = require(`${this._dependencies.root}${component.route}`)(this._dependencies)
+        const componentController = require(`${this._dependencies.root}/src${component.route}`)(this._dependencies)
         switch (component.method.toLocaleUpperCase()) {
           case 'GET':
             if (component.protected) {

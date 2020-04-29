@@ -1,4 +1,4 @@
-{
+const locale = {
   "name": "United States English",
   "code": "en_US",
   "shortcode": "en",
@@ -241,3 +241,5 @@
     }
   }
 }
+
+export { locale }
