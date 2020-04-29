@@ -1,6 +1,6 @@
 {
-  "name": "%BEAT%",
-  "short_name": "%BEAT%",
+  "name": "backend",
+  "short_name": "backend",
   "description": "The world's best software system",
   "start_url": "/",
   "scope": ".",

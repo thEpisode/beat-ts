@@ -42,8 +42,8 @@ const locale = {
         "PLAN_PAYMENT_DATE_COMPOSED": "Your next bill is for $ {{vueBind.model.plan.price}} on {{vueBind.model.plan.next_payment}}.",
         "PLAN_PAYMENT_MANAGE_BUTTON": "Manage my plan",
         "SIGNOUT_TITLE_LABEL": "Sign out everywhere",
-        "SIGNOUT_DESCRIPTION_LABEL": "Sign out wherever you have %BEAT% open, including the web, mobile, desktop or any other devices.",
-        "SIGNOUT_DESCRIPTION_BLOCKQUOTE": "Note: This doesn't include partner apps and devices, such as VCA apps and Amazon Alexa devices, smart watches. For more information about logging out (or unlinking) %BEAT% from a partner device, check the device's manufacturer guide.",
+        "SIGNOUT_DESCRIPTION_LABEL": "Sign out wherever you have backend open, including the web, mobile, desktop or any other devices.",
+        "SIGNOUT_DESCRIPTION_BLOCKQUOTE": "Note: This doesn't include partner apps and devices, such as VCA apps and Amazon Alexa devices, smart watches. For more information about logging out (or unlinking) backend from a partner device, check the device's manufacturer guide.",
         "SIGNOUT_ACTION_BUTTON": "Sign out everywhere",
         "LANGUAGE_TITLE_LABEL": "Language setup",
         "LANGUAGE_DESCRIPTION_LABEL": "This setting will change the language of your entire session on this device.",
@@ -102,7 +102,7 @@ const locale = {
     "dashboard": {
       "index": {
         "PAGE_TITLE": "Home",
-        "MAIN_TITLE_LABEL": "%BEAT%",
+        "MAIN_TITLE_LABEL": "backend",
         "MAIN_DESCRIPTION_LABEL": "Documentation",
         "SECOND_DESCRIPTION_LABEL": "Server framework for your Node.js projects made with Express, Firebase and ReactDOM."
       }

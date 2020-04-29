@@ -9,7 +9,6 @@ import { DatabaseManager } from "./database.manager"
 import { StorageManager } from "./storage.manager"
 import { ControllerManager } from "./controller.manager"
 import { ApiManager } from "./api.manager"
-import { FrontendManager } from "./frontend.manager"
 import { FunctionsManager } from "./functions.manager"
 import { SocketManager } from "./socket.manager"
 
@@ -51,8 +50,6 @@ class ServerManager {
       this.registerFunctions()
 
       this.registerApi()
-
-      this.registerFrontend()
 
       this._console.success('Server manager loaded')
 
@@ -127,12 +124,6 @@ class ServerManager {
     const _apiManager = new ApiManager(this._settings.dependencies.get())
 
     this._settings.dependencies.core.add(_apiManager, 'apiManager')
-  }
-
-  registerFrontend () {
-    const _frontendManager = new FrontendManager(this._settings.dependencies.get())
-
-    this._settings.dependencies.core.add(_frontendManager, 'frontendManager')
   }
 
   registerFunctions () {
