@@ -1,0 +1,114 @@
+{
+  "JWT_SECRET": "NodeJSIsCool",
+  "SERVER_PORT": "3500",
+  "SERVER_VERSION": "4.0.0",
+  "SERVER_NAME": "Backend server #1",
+  "BACKEND_SECRET": "zih9cVFnC0J0otOAFXrj",
+  "FRONTEND_URI": "http://localhost:3500",
+  "TOKEN_EXPIRE": 24,
+  "USE_DATABASE": false,
+  "USE_STORAGE": true,
+  "DATABASE_NAME": "firebase",
+  "STORAGE_NAME": "spaces",
+  "GEOIP_DATABASE": {
+    "PATH": "/databases/GeoLite2-City.mmdb"
+  },
+  "FIREBASE_ADMIN": {
+    "type": "service_account",
+    "project_id": "xxxx",
+    "private_key_id": "27756dd1fba76427899afa2380a26ccc3c42bf2b",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nxxxx\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-dn31i@xxxx.iam.gserviceaccount.com",
+    "client_id": "105079062454853884302",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-dn31i%40xxxx.iam.gserviceaccount.com"
+  },
+  "FIREBASE": {
+    "apiKey": "AIzaSyA5HkZeMu0EYpmFmqVgKtdusS6uwDdRhnY",
+    "authDomain": "xxxx.firebaseapp.com",
+    "databaseURL": "https://xxxx.firebaseio.com",
+    "projectId": "xxxx",
+    "storageBucket": "xxxx.appspot.com",
+    "messagingSenderId": "992690359753",
+    "appId": "1:992690359753:web:2a6f1941aec4871b6f2c18"
+  },
+  "POSTGRESQL": {
+    "user": "user",
+    "host": "127.0.0.1",
+    "database": "databasename",
+    "password": "pass",
+    "port": 5432,
+    "default_namespace": "chatbotsdb_test2"
+  },
+  "MAIL": {
+    "VALIDATION_PATH": "/validate-email",
+    "FROM": "\"Beat\" support@virtualcapitalofamerica.com",
+    "USER": "xxxx@virtualcapitalofamerica.com",
+    "PASSWORD": "xxxxx",
+    "SECURE": true,
+    "HOST": "smtp.gmail.com",
+    "PORT": 465
+  },
+  "DIGITALOCEAN": {
+    "SPACES": {
+      "accessKeyId": "YOUR_ACCESS_KEY_ID",
+      "secretAccessKey": "YOUR_SECRET_ACCESS_KEY",
+      "endpoint": "xxxx.digitaloceanspaces.com",
+      "bucket": "xxxx"
+    }
+  },
+  "CUSTOM_DEPENDENCIES": [
+    {
+      "name": "socketClient",
+      "package": "socket.io-client"
+    }
+  ],
+  "CUSTOM_STATIC_ROUTES":[
+    {
+      "route": "/jquery",
+      "path": "/node_modules/jquery/dist/"
+    },
+    {
+      "route": "/bootstrap",
+      "path": "/node_modules/bootstrap/dist/"
+    },
+    {
+      "route": "/fontawesome",
+      "path": "/node_modules/@fortawesome/fontawesome-free-webfonts/"
+    },
+    {
+      "route": "/material-design-font",
+      "path": "/node_modules/@mdi/font/"
+    },
+    {
+      "route": "/popperjs",
+      "path": "/node_modules/popper.js/dist/"
+    },
+    {
+      "route": "/sweetalert2",
+      "path": "/node_modules/sweetalert2/dist/"
+    },
+    {
+      "route": "/select2",
+      "path": "/node_modules/select2/dist/"
+    },
+    {
+      "route": "/select2-bootstrap-theme",
+      "path": "/node_modules/select2-bootstrap-theme/dist/"
+    },
+    {
+      "route": "/vue",
+      "path": "/node_modules/vue/dist"
+    },
+    {
+      "route": "/vue-resource",
+      "path": "/node_modules/vue-resource/dist"
+    },
+    {
+      "route": "/vue-cookies",
+      "path": "/node_modules/vue-cookies/"
+    }
+  ]
+}
