@@ -5,7 +5,7 @@ function socketController (dependencies: any) {
   const _utilities = dependencies.utilities
   const _controllers = dependencies.controllers
 
-  const _stackeholders: any = {
+  const _stakeholders: any = {
     node: { name: 'node' },
     admin: { name: 'admin' },
     client: { name: 'client' }
@@ -22,11 +22,11 @@ function socketController (dependencies: any) {
 
   // Implement a selection for event
   const eventEngine = async () => {
-    _eventBus.on('node-event', (payload: any) => { channelHandler({ payload, stackeholder: _stackeholders.node }) })
+    _eventBus.on('node-event', (payload: any) => { channelHandler({ payload, stakeholder: _stakeholders.node }) })
 
-    _eventBus.on('admin-event', (payload: any) => { channelHandler({ payload, stackeholder: _stackeholders.admin }) })
+    _eventBus.on('admin-event', (payload: any) => { channelHandler({ payload, stakeholder: _stakeholders.admin }) })
 
-    _eventBus.on('client-event', (payload: any) => { channelHandler({ payload, stackeholder: _stackeholders.client }) })
+    _eventBus.on('client-event', (payload: any) => { channelHandler({ payload, stakeholder: _stakeholders.client }) })
   }
 
   const getSocketById = ({ socketId }: any) => {
@@ -76,18 +76,12 @@ function socketController (dependencies: any) {
     _socket.emit('reversebytes.beat.api', data)
   }
 
-  const botRequest = async (data: any) => {
+  const tagManagement = async (data: any) => {
     if (!data || !data.values || !data.context) {
       return
     }
 
-    const socket = getFirstSocketByNativeId()
-
-    data.context.receiver = {
-      socketId: socket.id,
-      nativeId: socket.nativeId
-    }
-    socket.emit('reversebytes.beat.api', data)
+    _socket.emit('valiu.api', data)
   }
 
   const getAllNodes = (data: any) => {
@@ -130,9 +124,10 @@ function socketController (dependencies: any) {
 
   const clientActionHandler = async (payload: any) => {
     switch (payload.command) {
-      case 'create-bot#request':
-      case 'qr-bot#request':
-        botRequest(payload)
+      case 'tag-create#request':
+      case "tag-edition#request":
+      case "tag-remove#request":
+        tagManagement(payload)
         break
       default:
         break
@@ -182,7 +177,7 @@ function socketController (dependencies: any) {
         webSocketHandler({ payload, stakeholder })
         break
       case 'api':
-        apiHandler({payload, stakeholder})
+        apiHandler({ payload, stakeholder })
         break
       default:
         break
@@ -191,13 +186,13 @@ function socketController (dependencies: any) {
 
   const webSocketHandler = ({ payload, stakeholder }: any) => {
     switch (stakeholder.name.toLocaleLowerCase().trim()) {
-      case _stackeholders.node.name.toLocaleLowerCase().trim():
+      case _stakeholders.node.name.toLocaleLowerCase().trim():
         onNodeEvent(payload)
         break
-      case _stackeholders.admin.name.toLocaleLowerCase().trim():
+      case _stakeholders.admin.name.toLocaleLowerCase().trim():
         onAdminEvent(payload)
         break
-      case _stackeholders.client.name.toLocaleLowerCase().trim():
+      case _stakeholders.client.name.toLocaleLowerCase().trim():
         onClientEvent(payload)
         break
       default:

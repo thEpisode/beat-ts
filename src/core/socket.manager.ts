@@ -9,11 +9,13 @@ class SocketManager {
     this._console = dependencies.console
     this._socket = dependencies.socket
     this._eventBus = dependencies.eventBus
+
+    this.loadSocketEvents()
   }
 
   loadSocketEvents () {
     this._socket.on('connection', (client: any) => {
-      client.on('reversebytes.beat.api', (data: any) => {
+      client.on('valiu.api', (data: any) => {
         this._eventBus.emit(
           'admin-event',
           {
@@ -23,7 +25,7 @@ class SocketManager {
           }
         )
       })
-      client.on('reversebytes.beat.chatbot', (data: any) => {
+      client.on('valiu.chatbot', (data: any) => {
         this._eventBus.emit(
           'chatbot-event',
           {
@@ -33,7 +35,7 @@ class SocketManager {
           }
         )
       })
-      client.on('reversebytes.beat.client', (data: any) => {
+      client.on('valiu.client', (data: any) => {
         this._eventBus.emit(
           'client-event',
           {
