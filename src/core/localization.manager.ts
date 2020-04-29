@@ -67,7 +67,7 @@ class LocalizationManager {
         return null
       }
 
-      locale = this._locales[lang]
+      locale = this._locales[lang].locale
       if (!locale) {
         locale = this._locales.us
       }

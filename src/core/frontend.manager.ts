@@ -21,7 +21,8 @@ class FrontendManager {
 
   loadFrontendRoutes () {
     /// Setup engine for Express
-    this._app.set('views', `${this._dependencies.root}/views`)
+    const viewsRoute = `${this._dependencies.root.split('\\build')[0]}/src/views`
+    this._app.set('views', viewsRoute)
     this._app.set('view engine', 'jsx')
     this._app.engine('jsx', require('express-react-views').createEngine())
 
@@ -43,12 +44,12 @@ class FrontendManager {
     this.importCustomStaticRoutes()
 
     // Something else, 404 error
-    this._app.get('*', this._maintenance.index)
+    /* this._app.get('*', this._maintenance.index)
 
     this._app.use((err: any, req: any, res: any, next: any) => {
       res.redirect(`/maintenance?error=${err.code}&message=${err.message}`)
       next()
-    })
+    }) */
 
     this._console.success('FrontEnd manager loaded')
   }

@@ -1,4 +1,4 @@
-function auth (dependencies: any) {
+function authRoute (dependencies: any) {
   const _utilities = dependencies.utilities
   const _controllers = dependencies.controllers
   const _auth = dependencies.auth
@@ -117,4 +117,4 @@ function auth (dependencies: any) {
   }
 }
 
-module.exports = auth
+module.exports = authRoute
