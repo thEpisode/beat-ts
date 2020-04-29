@@ -11,7 +11,7 @@ class ModelManager {
   }
 
   loadModels () {
-    this._models = require(`${this._dependencies.root}/src/models/index`)
+    this._models = require(`${this._dependencies.root}/models/index`)
 
     this._console.success('Models manager loaded')
   }

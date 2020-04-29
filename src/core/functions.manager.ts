@@ -32,7 +32,7 @@ class FunctionsManager {
         /* Setup config */
         const _functionName = component.route.split('/')[component.route.split('/').length - 1]
         const name = _functionName.split('.')[0]
-        const pathname = `${this._dependencies.root}/src${component.route}`
+        const pathname = `${this._dependencies.root}/${component.route}`
 
         /* Setup namespace */
         this._functions.cached[name] = require(pathname)(this._dependencies)
@@ -47,7 +47,7 @@ class FunctionsManager {
     // build each api routes
     this._bucket.functions.timed.map((component: any) => {
       try {
-        const _function = require(`${this._dependencies.root}/src${component.route}`)(this._dependencies)
+        const _function = require(`${this._dependencies.root}/${component.route}`)(this._dependencies)
         const seconds = this._moment(`${component.startAt}`, 'hh:mm:ss').diff(this._moment(), 'milliseconds') > 0
           /* Add the next ticket if has time remaining */
           ? this._moment(`${component.startAt}`, 'hh:mm:ss')

@@ -65,7 +65,6 @@
     "vue-resource": "^1.5.1"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.6.6",
     "standard": "^14.3.1"
   },
   "standard": {

@@ -21,7 +21,7 @@ class ControllerManager {
       const getDirectories = (source: any) =>
         readdirSync(source).map((name: string) => join(source, name)).filter(isDirectory)
 
-      const directories = getDirectories(`${this._dependencies.root}/src/controllers/`)
+      const directories = getDirectories(`${this._dependencies.root}//controllers/`)
 
       // Map all controllers
       for (const path of directories) {
