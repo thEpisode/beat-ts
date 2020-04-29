@@ -1,10 +1,10 @@
-function closedMarketsFunction (dependencies) {
+function closedMarketsFunction (dependencies: any) {
   /* Dependencies */
   const _console = dependencies.console
   const _controllers = dependencies.controllers
   const _utilities = dependencies.utilities
 
-  const runEvery24H = async (data) => {
+  const runEvery24H = async (data: any) => {
     try {
       _console.info('Executing runEvery24H function')
 

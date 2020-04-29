@@ -1,4 +1,4 @@
-function currenciesManagerFunction (dependencies) {
+function currenciesManagerFunction (dependencies: any) {
   /* Dependencies */
   const _console = dependencies.console
 
@@ -9,7 +9,7 @@ function currenciesManagerFunction (dependencies) {
    * Cached function to handle data, in this example, _status
    * @param {any} data parameters to be handled in the function
    */
-  const saveConcurrentData = async (data) => {
+  const saveConcurrentData = async (data: any) => {
     if (data) {
       setCachedStatus(data)
     }
@@ -26,7 +26,7 @@ function currenciesManagerFunction (dependencies) {
    * Setter property function
    * @param {any} data is the new data to be saved
    */
-  const setCachedStatus = async (data) => {
+  const setCachedStatus = async (data: any) => {
     if (!data) {
       return null
     }

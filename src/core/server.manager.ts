@@ -3,7 +3,6 @@ import { ConsoleManager } from "./console.manager"
 import { ModelManager } from "./model.manager"
 import { DalManager } from "./dal.manager"
 import { GeolocatorManager } from "./geolocator.manager"
-import { LocalizationManager } from "./localization.manager"
 import { AuthManager } from "./auth.manager"
 import { DatabaseManager } from "./database.manager"
 import { StorageManager } from "./storage.manager"
@@ -38,8 +37,6 @@ class ServerManager {
       this.socketSetup()
 
       await this.registerGeolocator()
-
-      this.registerLocale()
 
       this.registerModels()
 
@@ -80,12 +77,6 @@ class ServerManager {
     await _geolocatorManager.loadDatabases()
 
     this._settings.dependencies.core.add(_geolocatorManager, 'geolocator')
-  }
-
-  registerLocale () {
-    const _localizationManager = new LocalizationManager(this._settings.dependencies.get())
-
-    this._settings.dependencies.core.add(_localizationManager, 'locale')
   }
 
   registerSettings () {
