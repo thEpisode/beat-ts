@@ -92,4 +92,4 @@ function accountRoute (dependencies: any) {
   }
 }
 
-module.exports = route
+module.exports = accountRoute

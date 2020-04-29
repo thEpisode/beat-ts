@@ -1,3 +1,6 @@
+import { FirebaseManager } from "./firebase.manager"
+import { PostgresqlManager } from "./postgresql.manager"
+
 class DatabaseManager {
   private _dependencies: any;
   private _console: any;
@@ -8,8 +11,7 @@ class DatabaseManager {
   private _db: any;
 
   constructor(dependencies: any) {
-    const { FirebaseManager } = require(`${dependencies.root}/src/core/firebase.manager`)
-    const { PostgresqlManager } = require(`${dependencies.root}/src/core/postgresql.manager`)
+
 
     this._dependencies = dependencies
     this._console = dependencies.console

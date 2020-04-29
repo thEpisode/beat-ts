@@ -19,4 +19,4 @@ function statusRoute (dependencies: any) {
   }
 }
 
-module.exports = status
+module.exports = statusRoute

@@ -59,4 +59,4 @@ function notificationRoute (dependencies: any) {
   }
 }
 
-module.exports = route
+module.exports = notificationRoute

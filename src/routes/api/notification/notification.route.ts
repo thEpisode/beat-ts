@@ -1,4 +1,4 @@
-function route (dependencies:any) {
+function notificationApiRoute (dependencies:any) {
   const _utilities = dependencies.utilities
   const _controllers = dependencies.controllers
 
@@ -55,4 +55,4 @@ function route (dependencies:any) {
   }
 }
 
-module.exports = route
+module.exports = notificationApiRoute

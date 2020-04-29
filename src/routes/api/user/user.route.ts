@@ -57,4 +57,4 @@ function useRoute (dependencies: any) {
   }
 }
 
-module.exports = route
+module.exports = useRoute

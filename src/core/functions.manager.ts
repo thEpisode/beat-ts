@@ -1,3 +1,5 @@
+import * as Bucket from "./../functions/bucket"
+
 class FunctionsManager {
   private _dependencies: any;
   private _console: any;
@@ -9,7 +11,7 @@ class FunctionsManager {
     this._dependencies = dependencies
     this._console = dependencies.console
     this._moment = dependencies.moment
-    this._bucket = require(`${dependencies.root}/src/functions/bucket`)
+    this._bucket = Bucket
     this._functions = {
       cached: {},
       timed: {}
@@ -23,7 +25,7 @@ class FunctionsManager {
 
   createCached () {
     // build each api routes
-    this._bucket.cached.map((component: any) => {
+    this._bucket.functions.cached.map((component: any) => {
       try {
         this._console.success(`Initializing ${component.name} function`)
 
@@ -43,7 +45,7 @@ class FunctionsManager {
 
   createTimed () {
     // build each api routes
-    this._bucket.timed.map((component: any) => {
+    this._bucket.functions.timed.map((component: any) => {
       try {
         const _function = require(`${this._dependencies.root}/src${component.route}`)(this._dependencies)
         const seconds = this._moment(`${component.startAt}`, 'hh:mm:ss').diff(this._moment(), 'milliseconds') > 0

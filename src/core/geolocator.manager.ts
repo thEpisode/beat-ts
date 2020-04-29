@@ -11,7 +11,7 @@ class GeolocatorManager {
   }
 
   async loadDatabases () {
-    const database = `${this._dependencies.root}${this._dependencies.config.GEOIP_DATABASE.PATH}`
+    const database = `./${this._dependencies.config.GEOIP_DATABASE.PATH}`
 
     this._lookup = await this._maxmind.open(database)
     this._console.success('Geolocate manager loaded')

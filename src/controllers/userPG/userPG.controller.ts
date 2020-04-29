@@ -273,4 +273,4 @@ function userPGController (dependencies: any) {
   }
 }
 
-module.exports = userController
+module.exports = userPGController

@@ -1,7 +1,9 @@
+import * as CountryCodes from "./../../locales/idd_codes.json"
+
 function localeController (dependencies: any) {
   const _console = dependencies.console
   const _utilities = dependencies.utilities
-  const countryCodes = require(`${dependencies.root}/src/locales/idd_codes`)
+  const countryCodes = CountryCodes
 
   const getAllIDDCountries = async () => {
     try {

@@ -7,4 +7,4 @@ const functions = {
   ]
 }
 
-module.exports = functions
+export { functions }

@@ -1,3 +1,5 @@
+import * as DAL from "./../dal/queryConstructor.dal.json"
+
 class DalManager {
   private _dal: any;
   public statuses: object = {
@@ -7,7 +9,7 @@ class DalManager {
   }
 
   constructor(dependencies: any) {
-    this._dal = require(`${dependencies.root}/src/dal/queryConstructor.dal`)
+    this._dal = DAL
   }
 
   get types () {

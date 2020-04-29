@@ -25,4 +25,4 @@ function templateRoute (dependencies: any) {
   }
 }
 
-module.exports = route
+module.exports = templateRoute

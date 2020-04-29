@@ -21,14 +21,14 @@ class FrontendManager {
 
   loadFrontendRoutes () {
     /// Setup engine for Express
-    this._app.set('views', `${this._dependencies.root}/src/views`)
+    this._app.set('views', `${this._dependencies.root}/views`)
     this._app.set('view engine', 'jsx')
     this._app.engine('jsx', require('express-react-views').createEngine())
 
     // build each frontend routes
-    this._router.frontend.map((component: any) => {
+    this._router.router.frontend.map(async (component: any) => {
       try {
-        const componentView = require(`${this._dependencies.root}/src${component.route}`)(this._dependencies)
+        const componentView = await require(`./${component.route}`)(this._dependencies)
 
         this._app.get(component.httpRoute, componentView[component.handler])
       } catch (error) {

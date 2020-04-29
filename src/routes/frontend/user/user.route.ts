@@ -209,4 +209,4 @@ function userRoute (dependencies: any) {
   }
 }
 
-module.exports = route
+module.exports = userRoute

@@ -19,7 +19,7 @@ class LocalizationManager {
   }
 
   loadLocales () {
-    const dictionaryFolder = `${this._dependencies.root}/src/locales/`
+    const dictionaryFolder = `${this._dependencies.root}/locales/`
     const fs = require('fs')
 
     const dictionaries = fs
@@ -33,7 +33,7 @@ class LocalizationManager {
       const localeFilename = (locale.name || locale)
 
       if (localeFilename.includes('.locale')) {
-        const localeFile = require(`${this._dependencies.root}/src/locales/${localeFilename}`)
+        const localeFile = require(`${this._dependencies.root}/locales/${localeFilename}`)
         this._locales[localeFile.country_iso_code.toLocaleLowerCase()] = localeFile
       }
     })

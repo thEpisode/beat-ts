@@ -1,4 +1,4 @@
-function login (dependencies:any) {
+function loginRoute (dependencies:any) {
   const _utilities = dependencies.utilities
   const _database = dependencies.database
 
@@ -29,4 +29,4 @@ function login (dependencies:any) {
   }
 }
 
-module.exports = login
+module.exports = loginRoute

@@ -1,3 +1,5 @@
+import { SpacesManager } from "./spaces.manager"
+
 class StorageManager {
   private _dependencies: any;
   private _console: any;
@@ -8,8 +10,6 @@ class StorageManager {
   private _s3: any;
 
   constructor(dependencies: any) {
-    const { SpacesManager } = require(`${dependencies.root}/src/core/spaces.manager`)
-
     this._dependencies = dependencies
     this._console = dependencies.console
     this._aws = dependencies.aws
